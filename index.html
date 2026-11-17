@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - SQLite DB Editor &amp; Viewer</title>
+<meta name="description" content="Privacy policy of the Android app SQLite DB Editor &amp; Viewer: the app collects no data and your files stay on your device.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1b1c1e;
+    --muted: #4f545c;
+    --rule: #d9dce1;
+    --accent: #1f5fae;
+    --box: #f2f5f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121417;
+      --fg: #e6e8eb;
+      --muted: #b2b7bf;
+      --rule: #30343a;
+      --accent: #8ab8f5;
+      --box: #1c2026;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2rem 1rem 3rem; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .5rem; }
+  h2 { font-size: 1.2rem; margin: 2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  p, li { overflow-wrap: anywhere; }
+  ul { padding-left: 1.25rem; }
+  li + li { margin-top: .35rem; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .92em; }
+  .meta { color: var(--muted); margin: 0 0 1.5rem; }
+  .summary { background: var(--box); border-radius: 12px; padding: 1rem 1.25rem; }
+  .summary ul { margin: .5rem 0 0; }
+  nav { margin-top: 2.5rem; color: var(--muted); font-size: .95rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy</h1>
+<p class="meta">SQLite DB Editor &amp; Viewer (Android, package <code>com.hainguyen.sqliteeditor</code>)<br>
+Developer: Hai Nguyen<br>
+Contact: nguyenthanhhai.2013@gmail.com<br>
+Effective date: November 17, 2026</p>
+
+<div class="summary">
+<strong>In short</strong>
+<ul>
+<li>The app does not collect, sell or share any personal data. It has no account, no ads, no analytics and no crash reporting.</li>
+<li>Your database files stay on your device. The app's own code never connects to the internet.</li>
+<li>The only network access comes from the Google Play Billing Library, which the app uses for the one-time Pro purchase. Purchases are handled by Google Play.</li>
+</ul>
+</div>
+
+<h2>1. Data the app collects</h2>
+<p>None. The developer does not receive any information about you, your device or your files. The app contains no advertising, analytics, tracking or crash reporting code, and does not use the advertising ID.</p>
+
+<h2>2. Your files</h2>
+<ul>
+<li>The app only sees the files you pick in the Android file picker or open with "Open with" from another app. It asks for no permission to read your storage.</li>
+<li>Files are read and edited on your device. Edits are made on a working copy in the app's private storage, which other apps cannot read. Your original file is written only when you tap Save, or to a new file when you choose "Save as a new file".</li>
+<li>When you choose "Overwrite anyway" for a file that changed elsewhere, the version that was overwritten is kept in the app's private storage for 7 days, so you can save it back to a file. You can delete it earlier in Settings.</li>
+<li>Working copies, backups and the app's own data are excluded from Android backup and from device-to-device transfer, so they never leave the device that way.</li>
+<li>When you export or share data (Pro), the file goes only where you choose: a location you pick, or the app you pick in the Android share sheet.</li>
+</ul>
+
+<h2>3. Data stored on your device</h2>
+<p>To work, the app keeps the following in its private storage on your device. None of it is sent to the developer or anyone else.</p>
+<ul>
+<li>The list of recent and pinned files, and the access Android granted to them.</li>
+<li>Unsaved edits and their undo history, until you save or discard them.</li>
+<li>SQL statements you ran (history) and queries you saved, for each file.</li>
+<li>Your settings (theme, text size and similar).</li>
+<li>Whether you bought Pro, and the latest time the app has seen, used to count the 14-day trial. The trial starts at the install time Android reports for the app.</li>
+</ul>
+<p>You can discard unsaved edits and delete backups in Settings. Uninstalling the app, or clearing its storage in Android settings, deletes all of this data.</p>
+
+<h2>4. Purchases through Google Play</h2>
+<p>The Pro upgrade is a one-time in-app purchase handled by Google Play. The app does not see or store your payment details. To know whether Pro was bought, the app asks Google Play on your device and keeps only the answer.</p>
+<p>The Google Play Billing Library included in the app connects to Google Play and, as part of its own operation, may send technical information about it (for example connection and error logs) to Google. This is the reason the app has the internet permission. Google processes this information and your purchase under its own terms:</p>
+<ul>
+<li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+<li><a href="https://play.google.com/about/play-terms/">Google Play Terms of Service</a></li>
+</ul>
+
+<h2>5. Permissions</h2>
+<ul>
+<li><code>com.android.vending.BILLING</code>: buy Pro through Google Play.</li>
+<li><code>android.permission.INTERNET</code> and <code>android.permission.ACCESS_NETWORK_STATE</code>: added by the Google Play Billing Library for its own use. The app's own code never uses the network.</li>
+<li><code>com.hainguyen.sqliteeditor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: an internal permission added by the AndroidX library, which keeps the app's internal messages private to the app.</li>
+</ul>
+<p>The app requests no storage, location, camera, microphone, contacts or other personal data permission.</p>
+
+<h2>6. Children</h2>
+<p>The app is a tool for working with database files and is not directed at children. It collects no data from anyone, including children.</p>
+
+<h2>7. Retention and deletion</h2>
+<p>The developer holds no data about you, so there is nothing to delete on the developer's side. Data on your device stays until you delete it in the app, clear the app's storage or uninstall the app. Information held by Google about your purchase is covered by the Google Privacy Policy linked above.</p>
+
+<h2>8. Changes to this policy</h2>
+<p>If this policy changes, the new version is published at this address with a new effective date. If a future version of the app were to collect any data, this policy and the app's Data safety section on Google Play would be updated before that version is released.</p>
+
+<h2>9. Contact</h2>
+<p>Questions about this policy or the app's privacy: nguyenthanhhai.2013@gmail.com.</p>
+
+<nav><a href="vi.html" hreflang="vi" lang="vi">Tiếng Việt</a></nav>
+</main>
+</body>
+</html>

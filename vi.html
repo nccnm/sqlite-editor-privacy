@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chính sách quyền riêng tư - SQLite DB Editor &amp; Viewer</title>
+<meta name="description" content="Chính sách quyền riêng tư của app Android SQLite DB Editor &amp; Viewer: app không thu thập dữ liệu, file của bạn ở trên máy của bạn.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1b1c1e;
+    --muted: #4f545c;
+    --rule: #d9dce1;
+    --accent: #1f5fae;
+    --box: #f2f5f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121417;
+      --fg: #e6e8eb;
+      --muted: #b2b7bf;
+      --rule: #30343a;
+      --accent: #8ab8f5;
+      --box: #1c2026;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2rem 1rem 3rem; }
+  h1 { font-size: 1.75rem; line-height: 1.25; margin: 0 0 .5rem; }
+  h2 { font-size: 1.2rem; margin: 2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  p, li { overflow-wrap: anywhere; }
+  ul { padding-left: 1.25rem; }
+  li + li { margin-top: .35rem; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .92em; }
+  .meta { color: var(--muted); margin: 0 0 1.5rem; }
+  .summary { background: var(--box); border-radius: 12px; padding: 1rem 1.25rem; }
+  .summary ul { margin: .5rem 0 0; }
+  nav { margin-top: 2.5rem; color: var(--muted); font-size: .95rem; }
+</style>
+</head>
+<body>
+<main>
+<h1>Chính sách quyền riêng tư</h1>
+<p class="meta">SQLite DB Editor &amp; Viewer (Android, gói <code>com.hainguyen.sqliteeditor</code>)<br>
+Nhà phát triển: Hai Nguyen<br>
+Liên hệ: nguyenthanhhai.2013@gmail.com<br>
+Ngày hiệu lực: 17/11/2026</p>
+
+<div class="summary">
+<strong>Tóm tắt</strong>
+<ul>
+<li>App không thu thập, không bán, không chia sẻ dữ liệu cá nhân nào. App không có tài khoản, không quảng cáo, không analytics, không báo cáo lỗi tự động.</li>
+<li>File cơ sở dữ liệu của bạn ở trên máy của bạn. Code của chính app không bao giờ kết nối Internet.</li>
+<li>Kết nối mạng duy nhất là của thư viện Google Play Billing, app dùng cho việc mua Pro một lần. Việc mua do Google Play xử lý.</li>
+</ul>
+</div>
+
+<h2>1. Dữ liệu app thu thập</h2>
+<p>Không có. Nhà phát triển không nhận được thông tin nào về bạn, về máy hay về file của bạn. App không có code quảng cáo, analytics, theo dõi hay báo cáo lỗi, và không dùng mã nhận dạng quảng cáo (advertising ID).</p>
+
+<h2>2. File của bạn</h2>
+<ul>
+<li>App chỉ thấy những file bạn chọn trong bộ chọn file của Android hoặc mở bằng "Mở bằng" từ app khác. App không xin quyền đọc bộ nhớ.</li>
+<li>File được đọc và sửa ngay trên máy. Thay đổi nằm trên một bản làm việc trong bộ nhớ riêng của app, app khác không đọc được. File gốc chỉ được ghi khi bạn nhấn Lưu, hoặc ghi ra file mới khi bạn chọn "Lưu thành file mới".</li>
+<li>Khi bạn chọn "Vẫn ghi đè" cho một file đã bị đổi ở nơi khác, bản bị ghi đè được giữ trong bộ nhớ riêng của app 7 ngày để bạn lưu lại ra file nếu cần. Bạn xóa sớm hơn được trong Cài đặt.</li>
+<li>Bản làm việc, bản sao lưu và dữ liệu riêng của app không nằm trong bản sao lưu của Android và không được chuyển sang máy khác, nên không rời khỏi máy theo cách đó.</li>
+<li>Khi bạn export hay chia sẻ dữ liệu (Pro), file chỉ tới nơi bạn chọn: vị trí bạn chọn, hoặc app bạn chọn trong bảng chia sẻ của Android.</li>
+</ul>
+
+<h2>3. Dữ liệu lưu trên máy của bạn</h2>
+<p>Để chạy, app giữ những thứ sau trong bộ nhớ riêng của nó trên máy bạn. Không thứ nào được gửi cho nhà phát triển hay cho ai khác.</p>
+<ul>
+<li>Danh sách file gần đây và file ghim, cùng quyền truy cập Android đã cấp cho chúng.</li>
+<li>Thay đổi chưa lưu và lịch sử hoàn tác của chúng, tới khi bạn lưu hoặc bỏ.</li>
+<li>Câu lệnh SQL bạn đã chạy (lịch sử) và query bạn đã lưu, theo từng file.</li>
+<li>Cài đặt của bạn (giao diện, cỡ chữ và các mục tương tự).</li>
+<li>Bạn đã mua Pro hay chưa, và mốc thời gian lớn nhất app từng thấy, dùng để đếm 14 ngày dùng thử. Thời gian dùng thử tính từ lúc cài app theo Android.</li>
+</ul>
+<p>Bạn bỏ được thay đổi chưa lưu và xóa được bản sao lưu trong Cài đặt. Gỡ app, hoặc xóa bộ nhớ của app trong cài đặt Android, sẽ xóa hết dữ liệu này.</p>
+
+<h2>4. Mua qua Google Play</h2>
+<p>Bản Pro là một lần mua trong app do Google Play xử lý. App không thấy và không lưu thông tin thanh toán của bạn. Để biết bạn đã mua Pro chưa, app hỏi Google Play trên máy và chỉ giữ câu trả lời.</p>
+<p>Thư viện Google Play Billing có trong app kết nối với Google Play và, trong hoạt động của chính nó, có thể gửi thông tin kỹ thuật về hoạt động đó (ví dụ log kết nối và lỗi) cho Google. Đó là lý do app có quyền Internet. Google xử lý thông tin này và việc mua của bạn theo điều khoản của Google:</p>
+<ul>
+<li><a href="https://policies.google.com/privacy?hl=vi">Chính sách quyền riêng tư của Google</a></li>
+<li><a href="https://play.google.com/about/play-terms/">Điều khoản dịch vụ của Google Play</a></li>
+</ul>
+
+<h2>5. Quyền</h2>
+<ul>
+<li><code>com.android.vending.BILLING</code>: mua Pro qua Google Play.</li>
+<li><code>android.permission.INTERNET</code> và <code>android.permission.ACCESS_NETWORK_STATE</code>: do thư viện Google Play Billing thêm vào cho chính nó dùng. Code của app không bao giờ dùng mạng.</li>
+<li><code>com.hainguyen.sqliteeditor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: quyền nội bộ do thư viện AndroidX thêm vào, giữ các thông điệp nội bộ của app chỉ trong app.</li>
+</ul>
+<p>App không xin quyền bộ nhớ, vị trí, camera, micro, danh bạ hay quyền dữ liệu cá nhân nào khác.</p>
+
+<h2>6. Trẻ em</h2>
+<p>App là công cụ làm việc với file cơ sở dữ liệu, không hướng tới trẻ em. App không thu thập dữ liệu của ai, kể cả trẻ em.</p>
+
+<h2>7. Thời gian giữ và xóa dữ liệu</h2>
+<p>Nhà phát triển không giữ dữ liệu nào về bạn, nên không có gì phải xóa ở phía nhà phát triển. Dữ liệu trên máy bạn còn tới khi bạn xóa trong app, xóa bộ nhớ của app hoặc gỡ app. Thông tin Google giữ về việc mua của bạn theo Chính sách quyền riêng tư của Google ở trên.</p>
+
+<h2>8. Thay đổi chính sách</h2>
+<p>Khi chính sách này thay đổi, bản mới được đăng ở cùng địa chỉ với ngày hiệu lực mới. Nếu một phiên bản sau của app có thu thập dữ liệu, chính sách này và mục An toàn dữ liệu của app trên Google Play sẽ được cập nhật trước khi phiên bản đó phát hành.</p>
+
+<h2>9. Liên hệ</h2>
+<p>Câu hỏi về chính sách này hay về quyền riêng tư của app: nguyenthanhhai.2013@gmail.com.</p>
+
+<nav><a href="index.html" hreflang="en" lang="en">English</a></nav>
+</main>
+</body>
+</html>
