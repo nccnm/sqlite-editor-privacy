@@ -52,7 +52,7 @@
 <p class="meta">SQLite DB Editor &amp; Viewer (Android, package <code>com.hainguyen.sqliteeditor</code>)<br>
 Developer: Hai Nguyen Studio<br>
 Contact: nguyenthanhhai.2013@gmail.com<br>
-Effective date: November 17, 2026</p>
+Effective date: November 24, 2026</p>
 
 <div class="summary">
 <strong>In short</strong>
@@ -60,6 +60,7 @@ Effective date: November 17, 2026</p>
 <li>The app does not collect, sell or share any personal data. It has no account, no ads, no analytics and no crash reporting.</li>
 <li>Your database files stay on your device. The app's own code never connects to the internet.</li>
 <li>The only network access comes from the Google Play Billing Library, which the app uses for the one-time Pro purchase. Purchases are handled by Google Play.</li>
+<li>Root mode and the app lock are off until you turn them on. Both work only on your device: the data of other apps and your PIN never leave it.</li>
 </ul>
 </div>
 
@@ -68,25 +69,33 @@ Effective date: November 17, 2026</p>
 
 <h2>2. Your files</h2>
 <ul>
-<li>The app only sees the files you pick in the Android file picker or open with "Open with" from another app. It asks for no permission to read your storage.</li>
+<li>The app only sees the files you pick in the Android file picker, or send to it with "Open with" or "Share" from another app. It asks for no permission to read your storage.</li>
 <li>Files are read and edited on your device. Edits are made on a working copy in the app's private storage, which other apps cannot read. Your original file is written only when you tap Save, or to a new file when you choose "Save as a new file".</li>
 <li>When you choose "Overwrite anyway" for a file that changed elsewhere, the version that was overwritten is kept in the app's private storage for 7 days, so you can save it back to a file. You can delete it earlier in Settings.</li>
 <li>Working copies, backups and the app's own data are excluded from Android backup and from device-to-device transfer, so they never leave the device that way.</li>
 <li>When you export or share data, the file goes only where you choose: a location you pick, or the app you pick in the Android share sheet.</li>
 </ul>
 
-<h2>3. Data stored on your device</h2>
+<h2>3. Root mode (databases of other apps)</h2>
+<ul>
+<li>Root mode is off by default and works only on a device you rooted yourself, after you turn it on in Settings and allow the app in your root manager (for example Magisk). You can turn it off at any time, and take root access back in your root manager.</li>
+<li>With root mode on, the app reads the list of installed apps, with their names and icons, to show which apps have databases. It reads the SQLite files of an app only when you open one. This list and these files are processed only on your device and are never sent anywhere.</li>
+<li>A database of another app is copied into the app's private storage and opened read-only, like any other file. The other app's files are written only when you tap Save: the app stops that app first, writes the new version, checks it, and keeps the files as they were as a backup in its private storage for 7 days, so you can put them back. You can delete such a backup earlier in Settings.</li>
+</ul>
+
+<h2>4. Data stored on your device</h2>
 <p>To work, the app keeps the following in its private storage on your device. None of it is sent to the developer or anyone else.</p>
 <ul>
 <li>The list of recent and pinned files, and the access Android granted to them.</li>
 <li>Unsaved edits and their undo history, until you save or discard them.</li>
 <li>SQL statements you ran (history) and queries you saved, for each file.</li>
-<li>Your settings (theme, text size and similar).</li>
+<li>Your settings (theme, text size, whether root mode is on and similar).</li>
+<li>If you turn on the app lock: a salted hash of your PIN (PBKDF2), never the PIN itself; when the app locks again; whether fingerprint or face unlock is on; and the count of wrong PINs, to slow down guessing. Fingerprints and faces are checked by Android: the app never receives them.</li>
 <li>Whether you bought Pro, and the latest time the app has seen, used to count the 14-day trial. The trial starts at the install time Android reports for the app.</li>
 </ul>
 <p>You can discard unsaved edits and delete backups in Settings. Uninstalling the app, or clearing its storage in Android settings, deletes all of this data.</p>
 
-<h2>4. Purchases through Google Play</h2>
+<h2>5. Purchases through Google Play</h2>
 <p>The Pro upgrade is a one-time in-app purchase handled by Google Play. The app does not see or store your payment details. To know whether Pro was bought, the app asks Google Play on your device and keeps only the answer.</p>
 <p>The Google Play Billing Library included in the app connects to Google Play and, as part of its own operation, may send technical information about it (for example connection and error logs) to Google. This is the reason the app has the internet permission. Google processes this information and your purchase under its own terms:</p>
 <ul>
@@ -94,24 +103,25 @@ Effective date: November 17, 2026</p>
 <li><a href="https://play.google.com/about/play-terms/">Google Play Terms of Service</a></li>
 </ul>
 
-<h2>5. Permissions</h2>
+<h2>6. Permissions</h2>
 <ul>
 <li><code>com.android.vending.BILLING</code>: buy Pro through Google Play.</li>
 <li><code>android.permission.INTERNET</code> and <code>android.permission.ACCESS_NETWORK_STATE</code>: added by the Google Play Billing Library for its own use. The app's own code never uses the network.</li>
 <li><code>com.hainguyen.sqliteeditor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: an internal permission added by the AndroidX library, which keeps the app's internal messages private to the app.</li>
+<li><code>android.permission.USE_BIOMETRIC</code> and <code>android.permission.USE_FINGERPRINT</code>: unlock the app lock with your fingerprint or face, if you turn that on. Android checks them; the app only learns whether the check passed.</li>
 </ul>
-<p>The app requests no storage, location, camera, microphone, contacts or other personal data permission.</p>
+<p>The app requests no storage, location, camera, microphone, contacts or other personal data permission. Root mode uses no Android permission: root access is given by your root manager, only when you turn root mode on.</p>
 
-<h2>6. Children</h2>
+<h2>7. Children</h2>
 <p>The app is a tool for working with database files and is not directed at children. It collects no data from anyone, including children.</p>
 
-<h2>7. Retention and deletion</h2>
+<h2>8. Retention and deletion</h2>
 <p>The developer holds no data about you, so there is nothing to delete on the developer's side. Data on your device stays until you delete it in the app, clear the app's storage or uninstall the app. Information held by Google about your purchase is covered by the Google Privacy Policy linked above.</p>
 
-<h2>8. Changes to this policy</h2>
+<h2>9. Changes to this policy</h2>
 <p>If this policy changes, the new version is published at this address with a new effective date. If a future version of the app were to collect any data, this policy and the app's Data safety section on Google Play would be updated before that version is released.</p>
 
-<h2>9. Contact</h2>
+<h2>10. Contact</h2>
 <p>Questions about this policy or the app's privacy: nguyenthanhhai.2013@gmail.com.</p>
 
 <nav><a href="vi.html" hreflang="vi" lang="vi">Tiếng Việt</a></nav>

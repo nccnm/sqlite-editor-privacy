@@ -52,7 +52,7 @@
 <p class="meta">SQLite DB Editor &amp; Viewer (Android, gói <code>com.hainguyen.sqliteeditor</code>)<br>
 Nhà phát triển: Hai Nguyen Studio<br>
 Liên hệ: nguyenthanhhai.2013@gmail.com<br>
-Ngày hiệu lực: 17/11/2026</p>
+Ngày hiệu lực: 24/11/2026</p>
 
 <div class="summary">
 <strong>Tóm tắt</strong>
@@ -60,6 +60,7 @@ Ngày hiệu lực: 17/11/2026</p>
 <li>App không thu thập, không bán, không chia sẻ dữ liệu cá nhân nào. App không có tài khoản, không quảng cáo, không analytics, không báo cáo lỗi tự động.</li>
 <li>File cơ sở dữ liệu của bạn ở trên máy của bạn. Code của chính app không bao giờ kết nối Internet.</li>
 <li>Kết nối mạng duy nhất là của thư viện Google Play Billing, app dùng cho việc mua Pro một lần. Việc mua do Google Play xử lý.</li>
+<li>Chế độ root và khóa app tắt tới khi bạn bật. Cả hai chỉ chạy trên máy của bạn: dữ liệu của app khác và mã PIN của bạn không bao giờ rời khỏi máy.</li>
 </ul>
 </div>
 
@@ -68,25 +69,33 @@ Ngày hiệu lực: 17/11/2026</p>
 
 <h2>2. File của bạn</h2>
 <ul>
-<li>App chỉ thấy những file bạn chọn trong bộ chọn file của Android hoặc mở bằng "Mở bằng" từ app khác. App không xin quyền đọc bộ nhớ.</li>
+<li>App chỉ thấy những file bạn chọn trong bộ chọn file của Android, hoặc gửi tới app bằng "Mở bằng" hay "Chia sẻ" từ app khác. App không xin quyền đọc bộ nhớ.</li>
 <li>File được đọc và sửa ngay trên máy. Thay đổi nằm trên một bản làm việc trong bộ nhớ riêng của app, app khác không đọc được. File gốc chỉ được ghi khi bạn nhấn Lưu, hoặc ghi ra file mới khi bạn chọn "Lưu thành file mới".</li>
 <li>Khi bạn chọn "Vẫn ghi đè" cho một file đã bị đổi ở nơi khác, bản bị ghi đè được giữ trong bộ nhớ riêng của app 7 ngày để bạn lưu lại ra file nếu cần. Bạn xóa sớm hơn được trong Cài đặt.</li>
 <li>Bản làm việc, bản sao lưu và dữ liệu riêng của app không nằm trong bản sao lưu của Android và không được chuyển sang máy khác, nên không rời khỏi máy theo cách đó.</li>
 <li>Khi bạn export hay chia sẻ dữ liệu, file chỉ tới nơi bạn chọn: vị trí bạn chọn, hoặc app bạn chọn trong bảng chia sẻ của Android.</li>
 </ul>
 
-<h2>3. Dữ liệu lưu trên máy của bạn</h2>
+<h2>3. Chế độ root (cơ sở dữ liệu của app khác)</h2>
+<ul>
+<li>Chế độ root tắt mặc định và chỉ chạy trên máy do chính bạn root, sau khi bạn bật trong Cài đặt và cho phép app trong trình quản lý root (ví dụ Magisk). Bạn tắt được bất cứ lúc nào, và thu lại quyền root trong trình quản lý root.</li>
+<li>Khi chế độ root bật, app đọc danh sách app đã cài, kèm tên và icon, để cho biết app nào có cơ sở dữ liệu. App chỉ đọc file SQLite của một app khi bạn mở file đó. Danh sách và các file này chỉ được xử lý trên máy bạn và không bao giờ được gửi đi đâu.</li>
+<li>Cơ sở dữ liệu của app khác được chép vào bộ nhớ riêng của app và mở ở chế độ chỉ đọc, như mọi file khác. File của app kia chỉ được ghi khi bạn nhấn Lưu: app dừng app kia trước, ghi bản mới, kiểm tra lại, và giữ các file như trước khi lưu làm bản sao lưu trong bộ nhớ riêng của app 7 ngày để bạn đặt lại được. Bạn xóa sớm hơn được trong Cài đặt.</li>
+</ul>
+
+<h2>4. Dữ liệu lưu trên máy của bạn</h2>
 <p>Để chạy, app giữ những thứ sau trong bộ nhớ riêng của nó trên máy bạn. Không thứ nào được gửi cho nhà phát triển hay cho ai khác.</p>
 <ul>
 <li>Danh sách file gần đây và file ghim, cùng quyền truy cập Android đã cấp cho chúng.</li>
 <li>Thay đổi chưa lưu và lịch sử hoàn tác của chúng, tới khi bạn lưu hoặc bỏ.</li>
 <li>Câu lệnh SQL bạn đã chạy (lịch sử) và query bạn đã lưu, theo từng file.</li>
-<li>Cài đặt của bạn (giao diện, cỡ chữ và các mục tương tự).</li>
+<li>Cài đặt của bạn (giao diện, cỡ chữ, chế độ root có bật không và các mục tương tự).</li>
+<li>Nếu bạn bật khóa app: mã băm có muối của mã PIN (PBKDF2), không bao giờ là chính mã PIN; khi nào app khóa lại; có mở bằng vân tay hay khuôn mặt không; và số lần nhập sai mã PIN, để làm chậm việc đoán. Vân tay và khuôn mặt do Android kiểm tra: app không bao giờ nhận được chúng.</li>
 <li>Bạn đã mua Pro hay chưa, và mốc thời gian lớn nhất app từng thấy, dùng để đếm 14 ngày dùng thử. Thời gian dùng thử tính từ lúc cài app theo Android.</li>
 </ul>
 <p>Bạn bỏ được thay đổi chưa lưu và xóa được bản sao lưu trong Cài đặt. Gỡ app, hoặc xóa bộ nhớ của app trong cài đặt Android, sẽ xóa hết dữ liệu này.</p>
 
-<h2>4. Mua qua Google Play</h2>
+<h2>5. Mua qua Google Play</h2>
 <p>Bản Pro là một lần mua trong app do Google Play xử lý. App không thấy và không lưu thông tin thanh toán của bạn. Để biết bạn đã mua Pro chưa, app hỏi Google Play trên máy và chỉ giữ câu trả lời.</p>
 <p>Thư viện Google Play Billing có trong app kết nối với Google Play và, trong hoạt động của chính nó, có thể gửi thông tin kỹ thuật về hoạt động đó (ví dụ log kết nối và lỗi) cho Google. Đó là lý do app có quyền Internet. Google xử lý thông tin này và việc mua của bạn theo điều khoản của Google:</p>
 <ul>
@@ -94,24 +103,25 @@ Ngày hiệu lực: 17/11/2026</p>
 <li><a href="https://play.google.com/about/play-terms/">Điều khoản dịch vụ của Google Play</a></li>
 </ul>
 
-<h2>5. Quyền</h2>
+<h2>6. Quyền</h2>
 <ul>
 <li><code>com.android.vending.BILLING</code>: mua Pro qua Google Play.</li>
 <li><code>android.permission.INTERNET</code> và <code>android.permission.ACCESS_NETWORK_STATE</code>: do thư viện Google Play Billing thêm vào cho chính nó dùng. Code của app không bao giờ dùng mạng.</li>
 <li><code>com.hainguyen.sqliteeditor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</code>: quyền nội bộ do thư viện AndroidX thêm vào, giữ các thông điệp nội bộ của app chỉ trong app.</li>
+<li><code>android.permission.USE_BIOMETRIC</code> và <code>android.permission.USE_FINGERPRINT</code>: mở khóa app bằng vân tay hoặc khuôn mặt, nếu bạn bật. Android kiểm tra; app chỉ biết việc kiểm tra có đạt hay không.</li>
 </ul>
-<p>App không xin quyền bộ nhớ, vị trí, camera, micro, danh bạ hay quyền dữ liệu cá nhân nào khác.</p>
+<p>App không xin quyền bộ nhớ, vị trí, camera, micro, danh bạ hay quyền dữ liệu cá nhân nào khác. Chế độ root không dùng quyền Android nào: quyền root do trình quản lý root cấp, chỉ khi bạn bật chế độ root.</p>
 
-<h2>6. Trẻ em</h2>
+<h2>7. Trẻ em</h2>
 <p>App là công cụ làm việc với file cơ sở dữ liệu, không hướng tới trẻ em. App không thu thập dữ liệu của ai, kể cả trẻ em.</p>
 
-<h2>7. Thời gian giữ và xóa dữ liệu</h2>
+<h2>8. Thời gian giữ và xóa dữ liệu</h2>
 <p>Nhà phát triển không giữ dữ liệu nào về bạn, nên không có gì phải xóa ở phía nhà phát triển. Dữ liệu trên máy bạn còn tới khi bạn xóa trong app, xóa bộ nhớ của app hoặc gỡ app. Thông tin Google giữ về việc mua của bạn theo Chính sách quyền riêng tư của Google ở trên.</p>
 
-<h2>8. Thay đổi chính sách</h2>
+<h2>9. Thay đổi chính sách</h2>
 <p>Khi chính sách này thay đổi, bản mới được đăng ở cùng địa chỉ với ngày hiệu lực mới. Nếu một phiên bản sau của app có thu thập dữ liệu, chính sách này và mục An toàn dữ liệu của app trên Google Play sẽ được cập nhật trước khi phiên bản đó phát hành.</p>
 
-<h2>9. Liên hệ</h2>
+<h2>10. Liên hệ</h2>
 <p>Câu hỏi về chính sách này hay về quyền riêng tư của app: nguyenthanhhai.2013@gmail.com.</p>
 
 <nav><a href="index.html" hreflang="en" lang="en">English</a></nav>
